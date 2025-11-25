@@ -1,0 +1,93 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding: 7%;
+    color: #161516;
+}
+
+.what, .how, .benefits {
+    display: flex;
+    margin-bottom: 25px; 
+}
+
+.what, .how {
+    flex-direction: row;
+}
+
+.benefits {
+    flex-direction: column;
+}
+
+.about, .steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.screenshot {
+    width: 150px;
+    margin-top: 30%;
+}
+
+h1 {
+    color: #6667AB;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+button {
+  max-width: 65%;
+  padding: 6px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #7B337E;
+  color: white;
+  font-size: calc(10px + 2vmin);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+ul {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+ul li {
+  position: relative;
+  padding-left: 25px;   
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+ul li::before {
+  content: "💜";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+}
+
+.steps ul li::before {
+    content: "🐾";
+}
+
+@media (min-width: 481px) {
+    .screenshot {
+        margin-top: 10%;
+    }
+    
+    body {
+    align-items: flex-start;  
+    padding-left: 7%;         
+    padding-right: 7%;
+  }
+
+  .about, .steps, .benefits {
+    max-width: 600px;          
+    width: 100%;
+  }
+}
+
