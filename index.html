@@ -73,4 +73,44 @@
     <button>Get early access</button>
   </div>
 
+  <div id="popup" class="popup-overlay">
+    <div class="popup">
+      <h2>Get early access</h2>
+      <p>Leave your email and we'll notify you.</p>
+
+      <form id="emailForm">
+        <input type="email" id="emailInput" placeholder="Your email" required>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+
+      <button class="close-btn" id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <script>
+  const popup = document.getElementById("popup");
+  const openButtons = document.querySelectorAll("button");
+  const closeBtn = document.getElementById("closePopup");
+  const emailForm = document.getElementById("emailForm");
+
+  openButtons.forEach(btn => {
+    if (btn.textContent.includes("Get early access")) {
+      btn.addEventListener("click", () => popup.style.display = "flex");
+    }
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  emailForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("emailInput").value;
+
+    alert("Thanks! We'll notify: " + email);
+    popup.style.display = "none";
+  });
+</script>
+
+
 </body>
